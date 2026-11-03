@@ -16,6 +16,7 @@ import { ServiceEquipos } from './services/service.equipos';
 import { LoginComponent } from './components/login-component/login-component';
 import { SubordinadosComponent } from './components/subordinados-component/subordinados-component';
 import { ServiceEmpleados } from './services/service.empleados';
+import { authTokenInterceptor } from './interceptors/auth-token-interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ServiceEmpleados } from './services/service.empleados';
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([errorInterceptor])),
+    provideHttpClient(withInterceptors([authTokenInterceptor])),
     provideToastService(),
     ServicePostFiles,
     ServiceEquipos,
