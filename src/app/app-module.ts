@@ -13,6 +13,9 @@ import { provideToastService } from 'ngx-yet-another-toast-library';
 import { ErrorComponent } from './components/error-component/error-component';
 import { EquiposComponent } from './components/equipos-component/equipos-component';
 import { ServiceEquipos } from './services/service.equipos';
+import { LoginComponent } from './components/login-component/login-component';
+import { SubordinadosComponent } from './components/subordinados-component/subordinados-component';
+import { ServiceEmpleados } from './services/service.empleados';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { ServiceEquipos } from './services/service.equipos';
     InformesPdfComponent,
     ErrorComponent,
     EquiposComponent,
+    LoginComponent,
+    SubordinadosComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
@@ -30,6 +35,7 @@ import { ServiceEquipos } from './services/service.equipos';
     provideToastService(),
     ServicePostFiles,
     ServiceEquipos,
+    ServiceEmpleados,
   ],
   bootstrap: [App],
 })
