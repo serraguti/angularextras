@@ -32,7 +32,7 @@ import { authTokenInterceptor } from './interceptors/auth-token-interceptor';
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([authTokenInterceptor])),
+    provideHttpClient(withInterceptors([authTokenInterceptor, errorInterceptor])),
     provideToastService(),
     ServicePostFiles,
     ServiceEquipos,
