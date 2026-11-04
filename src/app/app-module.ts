@@ -27,7 +27,7 @@ import { authTokenInterceptor } from './interceptors/auth-token-interceptor';
     ErrorComponent,
     EquiposComponent,
     LoginComponent,
-    SubordinadosComponent
+    SubordinadosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

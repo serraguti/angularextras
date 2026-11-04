@@ -1,0 +1,42 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Qwen2.5-Coder 3B
+    provider: ollama
+    model: qwen2.5-coder:3b
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: qwen2.5-coder DanyAI
+    provider: ollama
+    model: DanyaVoredom/DanyAI-qwen2.5-coder-1.5b-base
+    roles:
+      - autocomplete
+
+  - name: Autodetect
+    provider: ollama
+    model: AUTODETECT
+
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
+
+# Sección añadida para utilizar tu archivo angular-expert.md
+customCommands:
+  - name: angular
+    description: "Consultar al asistente experto en Angular moderno (v17+)"
+    prompt: |
+      Usa estrictamente las reglas e instrucciones definidas en el archivo @angular-expert.md para resolver o generar lo siguiente:
+      
+      {{{ input }}}
+
+      IMPORTANTE: Responde ÚNICAMENTE en texto plano estructurado en Markdown legible para humanos. Está estrictamente PROHIBIDO envolver tu respuesta completa en un bloque de código JSON o devolver un objeto JSON estructurado como si fueras una API.
